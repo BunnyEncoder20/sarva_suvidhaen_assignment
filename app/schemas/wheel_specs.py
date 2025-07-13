@@ -5,21 +5,21 @@ from typing import List
 
 # Pydantic validation class for fields inside "Fields"
 class WheelSpecFields(BaseModel):
-    axleBoxHousingBoreDia: Optional[str]
-    bearingSeatDiameter: Optional[str]
-    condemningDia: Optional[str]
-    intermediateWWP: Optional[str]
-    lastShopIssueSize: Optional[str]
-    rollerBearingBoreDia: Optional[str]
-    rollerBearingOuterDia: Optional[str]
-    rollerBearingWidth: Optional[str]
-    treadDiameterNew: Optional[str]
-    variationSameAxle: Optional[str]
-    variationSameBogie: Optional[str]
-    variationSameCoach: Optional[str]
-    wheelDiscWidth: Optional[str]
-    wheelGauge: Optional[str]
-    wheelProfile: Optional[str]
+    axleBoxHousingBoreDia: Optional[str] = None
+    bearingSeatDiameter: Optional[str] = None
+    condemningDia: Optional[str] = None
+    intermediateWWP: Optional[str] = None
+    lastShopIssueSize: Optional[str] = None
+    rollerBearingBoreDia: Optional[str] = None
+    rollerBearingOuterDia: Optional[str] = None
+    rollerBearingWidth: Optional[str] = None
+    treadDiameterNew: Optional[str] = None
+    variationSameAxle: Optional[str] = None
+    variationSameBogie: Optional[str] = None
+    variationSameCoach: Optional[str] = None
+    wheelDiscWidth: Optional[str] = None
+    wheelGauge: Optional[str] = None
+    wheelProfile: Optional[str] = None
 
 # Pydantic validation class for Complete table
 class WheelSpecCreate(BaseModel):
