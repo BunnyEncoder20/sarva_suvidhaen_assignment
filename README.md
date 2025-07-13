@@ -32,7 +32,19 @@ uv pip install "fastapi[standard]" "psycopg[binary]" python-dotenv sqlalchemy
 4. Made .env and config.py
     - for loading all env variables from single src of truth - the config file. (also don't need to load all env in each and every file which needs it)
 
-5. Make a requirements.txt file
+5. Installed Alembic (For DB migration)
+```cmd
+uv pip install alembic
+```
+
+6. Make a requirements.txt file
 ```cmd
 uv pip freeze > requirements.txt
+```
+
+
+### Imp Cmds used
+```cmd
+lsof -i :8000
+kill -9 <PID>
 ```
