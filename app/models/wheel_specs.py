@@ -8,7 +8,7 @@ class WheelSpecification(Base):
     id = Column(Integer, primary_key=True, index=True)
     form_number = Column(String, unique=True, nullable=False)
     submitted_by = Column(String, nullable=False)
-    submitted_date = Column(Date, nullable=False)
+    submitted_date = Column(String, nullable=False)
 
     # Fields inside 'fields' object
     axle_box_housing_bore_dia = Column(String)
