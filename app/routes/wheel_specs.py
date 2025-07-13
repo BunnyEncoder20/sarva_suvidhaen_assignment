@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, Query, status, HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
-from typing import List, Optional
 
-from starlette.status import HTTP_201_CREATED
+from typing import Optional
+
 
 from app.database import get_db
 from app.schemas.wheel_specs import WheelSpecCreate, WheelSpecGetResponse, WheelSpecPostResponse
@@ -36,6 +37,14 @@ def get_wheel_specifications(
 
     # debugging
     print("DB_DATA:\n",raw_data)
+
+    # exception handling
+    if not raw_data:
+        return {
+            "data": [],
+            "message": "No matching records found.",
+            "success": True
+        }
 
     # process data
     data = []
@@ -87,9 +96,26 @@ def create_wheel_specification(
         wheel_profile=fields.wheelProfile
     )
 
-    db.add(new_wheel_specs)     # stage changes to db
-    db.commit()                 # commit the new changes
-    db.refresh(new_wheel_specs) # retreive the new entry
+    # Error handling
+    try:
+        db.add(new_wheel_specs)     # stage changes to db
+        db.commit()                 # commit the new changes
+        db.refresh(new_wheel_specs) # retreive the new entry
+
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Form number already exists. Must be unique."
+        )
+
+    except SQLAlchemyError:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Database error occurred while saving the specifications."
+        )
+
 
     return {
         "data": {
