@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "780db58d-eb6a-4e59-a386-33f78f06cc80",
 		"name": "Wheel Specifications APIs",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "37383503"
 	},
 	"item": [
@@ -46,12 +46,12 @@
 					"response": []
 				},
 				{
-					"name": "Filter: formNumber",
+					"name": "By: formNumber",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"raw": "{{base_url}}/api/forms/wheel-specifications?formNumber=WHEEL-2025-001",
 							"host": [
 								"{{base_url}}"
 							],
@@ -63,8 +63,7 @@
 							"query": [
 								{
 									"key": "formNumber",
-									"value": "WHEEL-2025-001",
-									"disabled": true
+									"value": "WHEEL-2025-001"
 								},
 								{
 									"key": "submittedBy",
@@ -82,12 +81,12 @@
 					"response": []
 				},
 				{
-					"name": "Filter: submittedBy",
+					"name": "By: submittedBy",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"raw": "{{base_url}}/api/forms/wheel-specifications?submittedBy=user_id_002",
 							"host": [
 								"{{base_url}}"
 							],
@@ -104,8 +103,7 @@
 								},
 								{
 									"key": "submittedBy",
-									"value": "user_id_002",
-									"disabled": true
+									"value": "user_id_002"
 								},
 								{
 									"key": "submittedDate",
@@ -118,12 +116,12 @@
 					"response": []
 				},
 				{
-					"name": "Filter: submittedDate",
+					"name": "By: submittedDate",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"raw": "{{base_url}}/api/forms/wheel-specifications?submittedDate=2025-07-13",
 							"host": [
 								"{{base_url}}"
 							],
@@ -145,8 +143,7 @@
 								},
 								{
 									"key": "submittedDate",
-									"value": "2025-07-04",
-									"disabled": true
+									"value": "2025-07-13"
 								}
 							]
 						}
@@ -159,7 +156,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"raw": "{{base_url}}/api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=user_id_002&submittedDate=2025-07-13",
 							"host": [
 								"{{base_url}}"
 							],
@@ -171,18 +168,15 @@
 							"query": [
 								{
 									"key": "formNumber",
-									"value": "WHEEL-2025-001",
-									"disabled": true
+									"value": "WHEEL-2025-001"
 								},
 								{
 									"key": "submittedBy",
-									"value": "user_id_002",
-									"disabled": true
+									"value": "user_id_002"
 								},
 								{
 									"key": "submittedDate",
-									"value": "2025-07-04",
-									"disabled": true
+									"value": "2025-07-13"
 								}
 							]
 						}
@@ -202,14 +196,52 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"fields\": {\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\n    \"condemningDia\": \"825 (800-900)\",\n    \"intermediateWWP\": \"20 TO 28\",\n    \"lastShopIssueSize\": \"837 (800-900)\",\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\n    \"treadDiameterNew\": \"915 (900-1000)\",\n    \"variationSameAxle\": \"0.5\",\n    \"variationSameBogie\": \"5\",\n    \"variationSameCoach\": \"13\",\n    \"wheelDiscWidth\": \"127 (+4/-0)\",\n    \"wheelGauge\": \"1600 (+2,-1)\",\n    \"wheelProfile\": \"29.4 Flange Thickness\"\n  },\n  \"formNumber\": \"WHEEL-2025-004\",\n  \"submittedBy\": \"user_id_003\",\n  \"submittedDate\": \"2025-07-13\"\n}",
+							"raw": "{\n  \"fields\": {\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\n    \"condemningDia\": \"825 (800-900)\",\n    \"intermediateWWP\": \"20 TO 28\",\n    \"lastShopIssueSize\": \"837 (800-900)\",\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\n    \"treadDiameterNew\": \"915 (900-1000)\",\n    \"variationSameAxle\": \"0.5\",\n    \"variationSameBogie\": \"5\",\n    \"variationSameCoach\": \"13\",\n    \"wheelDiscWidth\": \"127 (+4/-0)\",\n    \"wheelGauge\": \"1600 (+2,-1)\",\n    \"wheelProfile\": \"29.4 Flange Thickness\"\n  },\n  \"formNumber\": \"WHEEL-2025-005\",\n  \"submittedBy\": \"user_id_006\",\n  \"submittedDate\": \"2025-07-13\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base_url}}/api/forms/wheel-specifications"
+						"url": {
+							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fields Missing: Fail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fields\": {\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\n    \"condemningDia\": \"825 (800-900)\",\n    \"intermediateWWP\": \"20 TO 28\",\n    \"lastShopIssueSize\": \"837 (800-900)\",\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\n    \"treadDiameterNew\": \"915 (900-1000)\",\n    \"variationSameAxle\": \"0.5\",\n    \"variationSameBogie\": \"5\",\n    \"variationSameCoach\": \"13\",\n    \"wheelDiscWidth\": \"127 (+4/-0)\",\n    \"wheelGauge\": \"1600 (+2,-1)\",\n    \"wheelProfile\": \"29.4 Flange Thickness\"\n  },\n  \"formNumber\": \"WHEEL-2025-005\",\n//   \"submittedBy\": \"user_id_003\",\n  \"submittedDate\": \"2025-07-13\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications"
+							]
+						}
 					},
 					"response": []
 				},
@@ -227,7 +259,17 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/api/forms/wheel-specifications"
+						"url": {
+							"raw": "{{base_url}}/api/forms/wheel-specifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications"
+							]
+						}
 					},
 					"response": []
 				}
