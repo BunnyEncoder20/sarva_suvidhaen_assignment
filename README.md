@@ -136,10 +136,10 @@ alembic/                 # Alembic migration setup
 ```
 
 ## Demo Recording
-- Link:
+- Link: https://drive.google.com/file/d/1pLDhxCSiRSDqi8Y2abICB-N4G9PVy3qy/view?usp=sharing
 
 ## Submission Details
-- src code:
+- src code: https://github.com/BunnyEncoder20/sarva_suvidhaen_assignment
 - postman collection (file include in root dir): varun_verma.postman_collection.json
 
 
