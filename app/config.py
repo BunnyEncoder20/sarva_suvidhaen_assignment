@@ -7,11 +7,11 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
 
     # postgres DB env variables
-    DATABASE_HOSTNAME: str
-    DATABASE_NAME: str
-    DATABASE_USERNAME: str
-    DATABASE_PASSWORD: str
-    DATABASE_PORT: int
+    HOSTNAME: str
+    DBNAME: str
+    USERNAME: str
+    PASSWORD: str
+    PORT: int
 
     class Config:
         env_file = ".env"
