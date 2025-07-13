@@ -1,4 +1,4 @@
-from app.database import Base
+from app.models.wheel_specs import Base
 from app.config import settings
 
 # ------------------------------
