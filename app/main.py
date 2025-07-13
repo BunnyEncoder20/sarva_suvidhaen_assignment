@@ -1,4 +1,6 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, Request
+from fastapi.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError
 
 # routes import
 from app.routes import wheel_specs as wheel_specification_routes
@@ -33,6 +35,17 @@ app.add_middleware(
 # Making connection to Postgres DB using SLQ Alchemy. reMakes the tables on app startup
 # Base.metadata.create_all(bind=engine)
 
+# FastAPI built in Exception handler override
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content={
+            "success": False,
+            "message": "Validation failed. Please check the input format.",
+            "errors": exc.errors()
+        },
+    )
 
 # Root route
 @app.get("/")
