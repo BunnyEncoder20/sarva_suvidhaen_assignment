@@ -1,7 +1,7 @@
 from fastapi import FastAPI, status
 
 # routes import
-
+from app.routes import wheel_specs as wheel_specification_routes
 
 # database import
 # from app.database import Base, engine
@@ -42,3 +42,4 @@ async def root():
 
 
 # include routers
+app.include_router(wheel_specification_routes.router)
